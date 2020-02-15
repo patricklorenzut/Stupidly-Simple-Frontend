@@ -14,6 +14,6 @@
             
         };
         </script>
-        <script src="http://localhost:8000/js/chatbubble.js" async type="text/javascript"></script>
+        <script src="https://api.stupidlysimple.app/js/chatbubble.js" async type="text/javascript"></script>
     </footer>
 </template>
