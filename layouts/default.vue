@@ -1,7 +1,7 @@
 <template>
   <div>
-    <!--<Alert/>-->
-    <!--<MainNav/>-->
+    <Alert/>
+    <MainNav/>
     <nuxt />
     <Footer/>
   </div>
