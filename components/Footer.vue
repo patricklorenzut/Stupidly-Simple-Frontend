@@ -7,6 +7,13 @@
         <script type="text/javascript">
             window.StupidlySimpleTitles = "Your mom. 👩‍🦰///Come baaaack!!!///Hey. 😗///I miss you. 😍///🤢 That site sucks!"
         </script>
-        <script src="/js/twist.js" async type="text/javascript"></script>
+        <script src="https://api.stupidlysimple.app/js/twister.js" async type="text/javascript"></script>
+
+        <script>
+        window.SSAChatBubbleSettings = {
+            dev: true
+        };
+        </script>
+        <script src="http://localhost:8000/js/chatbubble.js" async type="text/javascript"></script>
     </footer>
 </template>

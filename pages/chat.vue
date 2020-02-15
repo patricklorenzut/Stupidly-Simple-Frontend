@@ -2,11 +2,6 @@
 
   <div>        
 
-    <div class="text-center">
-      <a href="/" class="mx-auto inline-block text-indigo-800 py-20">
-        <span class="font-semibold text-xl tracking-tight">Stupidly Simple App</span>
-      </a>
-    </div>
 
     <header class="max-w-3xl mx-auto text-center py-20">
       <h1 class="text-5xl font-bold leading-tight">
@@ -54,7 +49,7 @@ window.SSAChatBubbleSettings = {
         <ol>
             <li><code>ssa_chatbubble.open()</code> opens the chat form</li>
             <li><code>ssa_chatbubble.close()</code> closes it</li>
-            <li><code>ssa_chatbubble.toggle()</code> toggles it.</li>
+            <li><code>ssa_chatbubble.toggle()</code> toggles it. Duh.</li>
         </ol>
 
         <p>Questions or feedback? <span onclick="ssa_chatbubble.open()">Let me know!</span></p>
