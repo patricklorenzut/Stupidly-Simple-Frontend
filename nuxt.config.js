@@ -19,6 +19,8 @@ export default {
     appName: 'StupidlySimpleApp',
     baseUrl: process.env.BASE_URL,
     baseApiUrl: process.env.API_BASE_URL,
+    tokenName: 'satellizer_token',
+    sessionName: 'member'
   },
   /*
   ** Customize the progress-bar color
@@ -73,7 +75,7 @@ export default {
       local: {
         endpoints: {
           login: { url: '/login', method: 'post', propertyName: 'token' },
-          user: { url: '/me', method: 'get', propertyName: 'member' },
+          user: { url: '/me', method: 'get', propertyName: false },
           logout: false
         }
       }

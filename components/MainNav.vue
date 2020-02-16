@@ -14,20 +14,25 @@
                 </div>
                 <div class="w-full lg:block flex-grow lg:flex lg:items-center lg:w-auto" :class="{hidden: isHidden}">
                     <div class="text-md lg:flex-grow">
-                    <a href="/" class="block mt-4 lg:inline-block lg:mt-0 text-purple-100 hover:text-white mr-6">
-                        Chat Widget
-                    </a>
-                    <a href="https://lorenzut.com" target="_blank" class="block mt-4 lg:inline-block lg:mt-0 text-purple-100 hover:text-white mr-6">
-                        Hire Me
-                    </a>
-                    <a href="https://wip.chat/products/3293" target="_blank" class="block mt-4 lg:inline-block lg:mt-0 text-purple-100 hover:text-white mr-6">
-                        Roadmap
-                    </a>
-                    </div>
-                    <div>
-                    <a href="/register" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-transparent bg-teal-800 hover:text-teal-500 hover:bg-white mt-4 lg:mt-0 mr-4">Create Account</a>
-                    </div>
-                    <a href="/login" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">Login</a>
+                        <nuxt-link to="/" class="block mt-4 lg:inline-block lg:mt-0 text-purple-100 hover:text-white mr-6">
+                            Chat Widget
+                        </nuxt-link>
+                        <a href="https://lorenzut.com" target="_blank" class="block mt-4 lg:inline-block lg:mt-0 text-purple-100 hover:text-white mr-6">
+                            Hire Me
+                        </a>
+                        <a href="https://wip.chat/products/3293" target="_blank" class="block mt-4 lg:inline-block lg:mt-0 text-purple-100 hover:text-white mr-6">
+                            Roadmap
+                        </a>
+                        </div>
+                        <template v-if="$store.getters.isLoggedIn">
+                            <nuxt-link to="/logout" class="block mt-4 lg:inline-block lg:mt-0 text-purple-100 hover:text-white">Logout</nuxt-link>
+                        </template>
+                        <template v-else>
+                            <div>
+                                <nuxt-link to="/register" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-transparent bg-teal-800 hover:text-teal-500 hover:bg-white mt-4 lg:mt-0 mr-4">Create Account</nuxt-link>
+                            </div>
+                            <nuxt-link to="/login" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">Login</nuxt-link>
+                        </template>
                     </div>
                 </div>
             </div>

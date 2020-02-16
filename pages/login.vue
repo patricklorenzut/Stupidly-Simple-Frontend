@@ -62,7 +62,7 @@
                     password: this.password
                   },
                 })
-                //this.$router.push('/')
+                this.$router.push('/')
                 
               } catch (e) {
                 this.$toast.error('Credentials are incorrect.')
