@@ -5,7 +5,7 @@
     <div class="bg-teal-100 bg-cover" style="background-image: url(/images/shape-bg.png)">
       <header class="max-w-4xl mx-auto text-center py-20 lg:py-40 px-10">
         <h1 class="text-5xl font-bold leading-tight">
-          A Simple, Private Chat Plugin
+          A Simple, Private Chat Widget
         </h1>
         <h2 class="text-2xl mt-4">
           Copy and paste some javascript onto your site to let visitors incredibly easily (and sexily) start an email conversation with you! 100% private. 100% simple.
@@ -26,13 +26,14 @@
           <li class="my-4"><span class="text-red-500">&#10004;</span> Free for your first 100 messages (no credit card required). Then just $4/mo for each additional 1,000 messages.</li>
           <li class="my-4"><span class="text-red-500">&#10004;</span> 100% Private. No cookies are used. Which means that you don’t have to add an annoying consent form to your site. And more importantly, it means that Ad Blockers will never block this chat window (unlike others).</li>
           <li class="my-4"><span class="text-red-500">&#10004;</span> Ultra-lightweight. Built with vanilla JavaScript. No jQuery bloat here :)</li>
-          <li class="my-4"><span class="text-red-500">&#10004;</span> Stupidly simple on purpose. This is <strong>not a live chat tool</strong>. Rather it’s a convenient way for visitors to start an email thread with you.</li>
+          <li class="my-4"><span class="text-red-500">&#10004;</span> Stupidly simple on purpose. This is <strong>not a live chat tool</strong>. Rather it’s a convenient way for visitors to start an email conversation with you.</li>
         </ul>
 
         <h2 class="text-2xl font-bold mt-20 mb-2">Installation and Configuation</h2>
-        <p>There are only 4 settings! Woohoo simplicity!</p>
+        <p>There are only 5 settings! And only 3 of them are configurable. Woohoo simplicity!</p>
         <ul class="list-disc my-4">
             <li><code class="text-red-500">app_id</code> is what ties this code to your account. It’s how the script knows who to send the email to.</li>
+            <li><code class="text-red-500">token</code> is what keeps other people from being bad.</li>
             <li><code class="text-red-500">color</code> is pretty self explanatory. Default is #3b3868 but you can change it to whatever you find soothing.</li>
             <li><code class="text-red-500">we</code> tells the system whether to use "I/me" pronouns or "We/us" pronouns.</li>
             <li><code class="text-red-500">visitor_email</code> is used in case you already know the email address of the visitor. Eg if you have this chat bubble installed inside of a member-only area.</li>            
@@ -42,6 +43,7 @@
             <pre><code>&lt;script&gt;
 window.SSAChatBubbleSettings = {
     app_id: REGISTER_TO_GET_THIS, <span class="text-red-500">#required</span>
+    token: REGISTER_TO_GET_THIS, <span class="text-red-500">#required</span>
     color: #3b3868, <span class="text-blue-500">#optional</span>
     we: false, <span class="text-blue-500">#optional</span>
     visior_email: null <span class="text-blue-500">#optional</span>

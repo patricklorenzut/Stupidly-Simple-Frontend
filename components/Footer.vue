@@ -9,9 +9,19 @@
         </script>
         <script src="https://api.stupidlysimple.app/js/twister.js" async type="text/javascript"></script>
 
+        <!-- <script>
+        window.SSAChatBubbleSettings = {
+            dev: true,
+            token: '9dbztbNJauy2QYla',
+            app_id: 3
+        };
+        </script>
+        <script src="http://localhost:8000/js/chatbubble.js" async type="text/javascript"></script> -->
+
         <script>
         window.SSAChatBubbleSettings = {
-            
+            token: '9dbztbNJauy2QYla',
+            app_id: 3
         };
         </script>
         <script src="https://api.stupidlysimple.app/js/chatbubble.js" async type="text/javascript"></script>

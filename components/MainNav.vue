@@ -15,7 +15,7 @@
                 <div class="w-full lg:block flex-grow lg:flex lg:items-center lg:w-auto" :class="{hidden: isHidden}">
                     <div class="text-md lg:flex-grow">
                     <a href="/" class="block mt-4 lg:inline-block lg:mt-0 text-purple-100 hover:text-white mr-6">
-                        Chat Tool
+                        Chat Widget
                     </a>
                     <a href="https://lorenzut.com" target="_blank" class="block mt-4 lg:inline-block lg:mt-0 text-purple-100 hover:text-white mr-6">
                         Hire Me
