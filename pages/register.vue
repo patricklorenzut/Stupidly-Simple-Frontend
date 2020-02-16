@@ -76,7 +76,7 @@
             },
             async register() {
                 try {
-                    await this.$axios.post('register', {
+                    await this.$axios.post('/register', {
                         name: this.name,
                         email: this.email,
                         password: this.password,
