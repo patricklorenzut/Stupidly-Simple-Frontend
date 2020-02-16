@@ -13,7 +13,8 @@
         window.SSAChatWidgetSettings = {
             dev: true,
             token: 'sQ034aCjacnURvpN',
-            id: 1
+            id: 1,
+            color: '#3b3868'
         };
         </script>
         <script src="http://localhost:8000/js/chatwidget.js" async type="text/javascript"></script> -->
@@ -21,7 +22,8 @@
         <script>
         window.SSAChatWidgetSettings = {
             token: 'sQ034aCjacnURvpN',
-            id: 1
+            id: 1,
+            color: '#3b3868'
         };
         </script>
         <script src="https://api.stupidlysimple.app/js/chatwidget.js" async type="text/javascript"></script>

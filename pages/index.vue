@@ -48,7 +48,7 @@ window.SSAChatWidgetSettings = {
         <ul class="list-disc my-4">
             <li><code class="text-red-500">id</code> is what ties this code to your account. It’s how the script knows who to send the email to.</li>
             <li><code class="text-red-500">token</code> is what keeps other people from being bad.</li>
-            <li><code class="text-red-500">color</code> is pretty self explanatory. Default is #3b3868 but you can change it to whatever you find soothing.</li>
+            <li><code class="text-red-500">color</code> is pretty self explanatory. Default is #333333 but you can change it to whatever you find soothing.</li>
             <li><code class="text-red-500">we</code> tells the system whether to use "I/me" pronouns or "We/us" pronouns.</li>
             <li><code class="text-red-500">visitor_email</code> is used in case you already know the email address of the visitor. Eg if you have this chat bubble installed inside of a member-only area.</li>            
         </ul>
@@ -61,7 +61,7 @@ window.SSAChatWidgetSettings = {<template v-if="$store.getters.isLoggedIn">
 </template><template v-else>
     id: REGISTER_TO_GET_THIS, <span class="text-red-500">#required</span>
     token: REGISTER_TO_GET_THIS, <span class="text-red-500">#required</span>
-</template>    color: '#3b3868', <span class="text-blue-500">#optional</span>
+</template>    color: '#333333', <span class="text-blue-500">#optional</span>
     we: false, <span class="text-blue-500">#optional</span>
     visior_email: null <span class="text-blue-500">#optional</span>
 };
