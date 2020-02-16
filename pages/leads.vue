@@ -39,7 +39,7 @@
         <h2 class="text-2xl font-bold mt-16 mb-2">Why?</h2>
         <p>I asked a friend how to do customer outreach for <a class="text-red-500 hover:text-red-900" href="https://forhumansake.org" target="_blank">For Human Sake</a>. He responded by asking who my target audience was. I answered "basically a hybrid of Tim Ferriss fans and Brené Brown fans." And thus this tool was born.</p>
 
-        <p class="mt-16">Questions or feedback? <span class="text-red-500 hover:text-red-900 cursor-pointer" onclick="ssa_chatbubble.open()">Let me know!</span></p>
+        <p class="mt-16">Questions or feedback? <span class="text-red-500 hover:text-red-900 cursor-pointer" onclick="ssa_chatwidget.open()">Let me know!</span></p>
         
     </section>    
 

@@ -10,20 +10,20 @@
         <script src="https://api.stupidlysimple.app/js/twister.js" async type="text/javascript"></script>
 
         <!-- <script>
-        window.SSAChatBubbleSettings = {
+        window.SSAChatWidgetSettings = {
             dev: true,
-            token: '9dbztbNJauy2QYla',
-            app_id: 3
+            token: 'sQ034aCjacnURvpN',
+            id: 1
         };
         </script>
-        <script src="http://localhost:8000/js/chatbubble.js" async type="text/javascript"></script> -->
+        <script src="http://localhost:8000/js/chatwidget.js" async type="text/javascript"></script> -->
 
         <script>
-        window.SSAChatBubbleSettings = {
-            token: '9dbztbNJauy2QYla',
-            app_id: 3
+        window.SSAChatWidgetSettings = {
+            token: 'sQ034aCjacnURvpN',
+            id: 1
         };
         </script>
-        <script src="https://api.stupidlysimple.app/js/chatbubble.js" async type="text/javascript"></script>
+        <script src="https://api.stupidlysimple.app/js/chatwidget.js" async type="text/javascript"></script>
     </footer>
 </template>

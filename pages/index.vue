@@ -11,9 +11,23 @@
           Copy and paste some javascript onto your site to let visitors incredibly easily (and sexily) start an email conversation with you! 100% private. 100% simple.
         </h2> 
 
-        <div class="mt-16">
-          <span class="inline-block rounded-full bg-teal-700 hover:bg-teal-800 py-5 px-10 cursor-pointer text-white uppercase font-bold" onclick="ssa_chatbubble.toggle()">Click to See Demo</span>
-          <p class="text-teal-500 mt-3">Or <a href="/register" class="text-red-500 hover:text-red-900">click here</a> to create your free account.</p>
+        <div class="mt-16">         
+          <template v-if="!$store.getters.isLoggedIn">
+             <span class="inline-block rounded-full bg-teal-700 hover:bg-teal-800 py-5 px-10 cursor-pointer text-white uppercase font-bold" onclick="ssa_chatwidget.toggle()">Click to See Demo</span>
+            <p class="text-teal-500 mt-3">Or <nuxt-link to="/register" class="text-red-500 hover:text-red-900">click here</nuxt-link> to create your free account.</p>
+          </template>
+          <template v-else>
+            <p class="mb-3">Here’s your code (see below for configuration options):</p>
+            <div class="bg-gray-800 p-4 max-w-md mx-auto font-mono text-white text-sm overflow-x-scroll text-left">
+            <pre><code>&lt;script&gt;
+window.SSAChatWidgetSettings = {
+    id: {{ $store.getters.memberProfile.id }},
+    token: '{{ $store.getters.memberProfile.token }}'
+};
+&lt;/script&gt;
+&lt;script src=&quot;https://api.stupidlysimple.app/js/chatwidget.js&quot; async type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</code></pre>
+        </div>
+          </template>
         </div>
 
       </header>  
@@ -32,7 +46,7 @@
         <h2 class="text-2xl font-bold mt-20 mb-2">Installation and Configuation</h2>
         <p>There are only 5 settings! And only 3 of them are configurable. Woohoo simplicity!</p>
         <ul class="list-disc my-4">
-            <li><code class="text-red-500">app_id</code> is what ties this code to your account. It’s how the script knows who to send the email to.</li>
+            <li><code class="text-red-500">id</code> is what ties this code to your account. It’s how the script knows who to send the email to.</li>
             <li><code class="text-red-500">token</code> is what keeps other people from being bad.</li>
             <li><code class="text-red-500">color</code> is pretty self explanatory. Default is #3b3868 but you can change it to whatever you find soothing.</li>
             <li><code class="text-red-500">we</code> tells the system whether to use "I/me" pronouns or "We/us" pronouns.</li>
@@ -41,24 +55,27 @@
         <p class="my-4">The MOST complicated your install could be is this:</p>
         <div class="bg-gray-800 p-4 font-mono text-white text-sm overflow-x-scroll">
             <pre><code>&lt;script&gt;
-window.SSAChatBubbleSettings = {
-    app_id: REGISTER_TO_GET_THIS, <span class="text-red-500">#required</span>
+window.SSAChatWidgetSettings = {<template v-if="$store.getters.isLoggedIn">
+    id: {{ $store.getters.memberProfile.id }}, <span class="text-red-500">#required</span>
+    token: '{{ $store.getters.memberProfile.token }}', <span class="text-red-500">#required</span>
+</template><template v-else>
+    id: REGISTER_TO_GET_THIS, <span class="text-red-500">#required</span>
     token: REGISTER_TO_GET_THIS, <span class="text-red-500">#required</span>
-    color: #3b3868, <span class="text-blue-500">#optional</span>
+</template>    color: '#3b3868', <span class="text-blue-500">#optional</span>
     we: false, <span class="text-blue-500">#optional</span>
     visior_email: null <span class="text-blue-500">#optional</span>
 };
 &lt;/script&gt;
-&lt;script src=&quot;https://api.stupidlysimple.app/js/chatbubble.js&quot; async type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</code></pre>
+&lt;script src=&quot;https://api.stupidlysimple.app/js/chatwidget.js&quot; async type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</code></pre>
         </div>
 
 
         <h2 class="text-2xl font-bold mt-20 mb-2">Functions</h2>
         <p>Want to interact with this chat bubble from your own application? You can!</p>
         <ul class="list-desc">
-            <li class="mt-3"><code class="bg-gray-800 text-red-500 px-2 py-1 inline-block">ssa_chatbubble.open()</code> opens the chat box.</li>
-            <li class="mt-3"><code class="bg-gray-800 text-red-500 px-2 py-1 inline-block">ssa_chatbubble.close()</code> closes it.</li>
-            <li class="mt-3"><code class="bg-gray-800 text-red-500 px-2 py-1 inline-block">ssa_chatbubble.toggle()</code> toggles it.</li>
+            <li class="mt-3"><code class="bg-gray-800 text-red-500 px-2 py-1 inline-block">ssa_chatwidget.open()</code> opens the chat box.</li>
+            <li class="mt-3"><code class="bg-gray-800 text-red-500 px-2 py-1 inline-block">ssa_chatwidget.close()</code> closes it.</li>
+            <li class="mt-3"><code class="bg-gray-800 text-red-500 px-2 py-1 inline-block">ssa_chatwidget.toggle()</code> toggles it.</li>
         </ul>
 
         <h2 class="text-2xl font-bold mt-20 mb-2">How is this better than Intercom?</h2>
@@ -94,7 +111,7 @@ window.SSAChatBubbleSettings = {
 
         <p class="mb-4">So I built this. I hope it’s as marginally useful for you as it is for me!</p>
 
-        <p class="mt-16">Questions or feedback? <span class="text-red-500 hover:text-red-900 cursor-pointer" onclick="ssa_chatbubble.open()">Let me know!</span></p>
+        <p class="mt-16">Questions or feedback? <span class="text-red-500 hover:text-red-900 cursor-pointer" onclick="ssa_chatwidget.open()">Let me know!</span></p>
         
     </section>    
 
