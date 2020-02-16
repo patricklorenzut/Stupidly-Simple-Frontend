@@ -14,7 +14,6 @@
     "@nuxtjs/auth": "^4.8.5",
     "@nuxtjs/axios": "^5.9.5",
     "@nuxtjs/toast": "^3.3.0",
-    "fsevents": "^2.1.2",
     "node-sass": "^4.13.1",
     "nuxt": "^2.0.0",
     "sass-loader": "^8.0.2"
