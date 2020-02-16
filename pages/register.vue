@@ -3,28 +3,38 @@
         <div class="w-full max-w-xs mx-auto">
             <h2 class="font-bold py-5 text-center text-white">Create a Stupidly Simple Account</h2>
             <Notification :message="error" v-if="error"/>
-            <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" method="post" @submit.prevent="register">
+            <form class="auth-form" method="post" @submit.prevent="register">
                 <div class="mb-4">
-                    <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
+                    <label for="name">
                         Full Name
                     </label>
-                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="name" id="name" type="text" required placeholder="Jane Elizabeth Doe" v-model="name">
+                    <input name="name" id="name" type="text" required placeholder="Jane Elizabeth Doe" v-model="name" v-validate="'required'">
+                    <p class="text-red-500">{{ errors.first('name') }}</p>
                 </div>
                 <div class="mb-4">
-                    <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
+                    <label for="email">
                         Email Address
                     </label>
-                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="email" id="email" v-model="email" type="email" required placeholder="jane@doe.com">
+                    <input name="email" id="email" v-model="email" type="email" required placeholder="jane@doe.com" v-validate="'required|email'">
+                    <p class="text-red-500">{{ errors.first('email') }}</p>
                 </div>
                 <div class="mb-4">
-                    <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
+                    <label for="password">
                         Password
                     </label>
-                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" name="password" id="password" v-model="password" required type="password" placeholder="******************">
+                    <input name="password" id="password" v-model="password" ref="password" required type="password" placeholder="******************" v-validate="'required'">
+                    <p class="text-red-500">{{ errors.first('password') }}</p>
+                </div>
+                 <div class="mb-4">
+                    <label for="password_confirmation">
+                        Password, Again
+                    </label>
+                    <input name="password_confirmation" id="password_confirmation" v-model="password_confirmation" required type="password" placeholder="******************" v-validate="'required|confirmed:password'">
+                    <p class="text-red-500">{{ errors.first('password_confirmation') }}</p>
                 </div>
                 
                 <div class="flex items-center justify-between">
-                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit" native-type="submit" v-on:click.prevent="requestRegister()">
                         Create Account
                     </button>
                 </div>
@@ -40,6 +50,7 @@
     import Notification from '~/components/Notification'
     export default {
         layout: 'login',  
+        middleware: 'guest',
         components: {
             Notification,
         },
@@ -49,17 +60,27 @@
                 name: '',
                 email: '',
                 password: '',
+                password_confirmation: '',
                 error: null
             }
         },
 
         methods: {
+            async requestRegister() {
+                this.$validator.validateAll().then((result) => {
+                  
+                if (result) {
+                    this.register()             
+                 }                
+               })
+            },
             async register() {
                 try {
                     await this.$axios.post('register', {
                         name: this.name,
                         email: this.email,
-                        password: this.password
+                        password: this.password,
+                        password_confirmation: this.password_confirmation
                     })
 
                     await this.$auth.loginWith('local', {
@@ -71,7 +92,15 @@
 
                     this.$router.push('/')
                 } catch (e) {
-                    this.error = e.response.data.message
+                    var error_message = 'Unable to register.'
+                    if(e.response.data.email){
+                        error_message = e.response.data.email
+                    }else if(e.response.data.password){
+                        error_message = e.response.data.password
+                    }else if(e.response.data.name){
+                        error_message = e.response.data.name
+                    }
+                    this.$toast.error(error_message)
                 }
             }
         }

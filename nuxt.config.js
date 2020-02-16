@@ -1,4 +1,4 @@
-
+require('dotenv').config()
 export default {
   mode: 'spa',
   /*
@@ -14,6 +14,11 @@ export default {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
+  },
+  env: {
+    appName: 'StupidlySimpleApp',
+    baseUrl: process.env.BASE_URL,
+    baseApiUrl: process.env.API_BASE_URL,
   },
   /*
   ** Customize the progress-bar color
@@ -42,8 +47,14 @@ export default {
   */
   modules: [
     '@nuxtjs/axios',
-    '@nuxtjs/auth'
+    '@nuxtjs/auth',
+    'nuxt-validate',
+    '@nuxtjs/toast',
   ],
+  toast: {
+    position: 'top-center',
+    duration: 4000
+  },
   /*
   ** Build configuration
   */
@@ -55,14 +66,14 @@ export default {
     }
   },
   axios: {
-    baseURL: 'http:/localhost:8000'
+    baseURL: process.env.API_BASE_URL
   },
   auth: {
     strategies: {
       local: {
         endpoints: {
-          login: { url: 'login', method: 'post', propertyName: 'data.token' },
-          user: { url: 'me', method: 'get', propertyName: 'data' },
+          login: { url: 'login', method: 'post', propertyName: 'token' },
+          user: { url: 'me', method: 'get', propertyName: 'member' },
           logout: false
         }
       }
