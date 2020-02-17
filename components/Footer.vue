@@ -23,8 +23,7 @@
         window.UnderpolishedChatSettings = {
             token: 'sQ034aCjacnURvpN',
             id: 1,
-            color: '#42438b',
-            whitelabel: true
+            color: '#42438b'
         };
         </script>
         <script src="https://api.underpolished.com/js/chatwidget.js" async type="text/javascript"></script>
