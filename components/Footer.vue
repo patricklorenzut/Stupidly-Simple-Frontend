@@ -13,7 +13,8 @@
         window.UnderpolishedChatSettings = {
             token: 'sQ034aCjacnURvpN',
             id: 1,
-            color: '#42438b'
+            color: '#42438b',
+            button_text: 'Get in Touch'
         };
         </script>
         <script :src="api_url + '/js/chatwidget.js'" async type="text/javascript"></script>
@@ -27,7 +28,7 @@
     export default {
         data() {
             return {
-                api_url: process.env.baseApiUrl,
+                api_url: process.env.baseApiUrl
             };
         },       
     }

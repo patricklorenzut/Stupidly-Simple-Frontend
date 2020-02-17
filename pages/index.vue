@@ -37,7 +37,7 @@ window.UnderpolishedChatSettings = {
 
         <h2 class="text-2xl font-bold mt-16 mb-2">The Deets</h2>
         <ul>
-          <li class="my-4"><span class="text-red-500">&#10004;</span> Free for your first 100 messages (no credit card required). Then just $4/mo for each additional 1,000 messages.</li>
+          <li class="my-4"><span class="text-red-500">&#10004;</span> Free for your first 100 emails (no credit card required). Then just $7 for each additional 1,000 emails. There is NO monthly billing. And there’s no expiration. So if you get 1,000 emails every 3 years then you'll pay $7 every 3 years. Because paying $X for your first Y usage every month is some bullshit that exploits the hell out of people that aren’t even close to Y usage. This guy (read: me) will not charge you just to play the game.</li>
           <li class="my-4"><span class="text-red-500">&#10004;</span> 100% Private. No cookies are used. Which means that you don’t have to add an annoying consent form to your site. And more importantly, it means that Ad Blockers will never block this chat window (unlike others).</li>
           <li class="my-4"><span class="text-red-500">&#10004;</span> Ultra-lightweight. Built with vanilla JavaScript. No jQuery bloat here :)</li>
           <li class="my-4"><span class="text-red-500">&#10004;</span> Stupidly simple on purpose. This is <strong>not a live chat tool</strong>. Rather it’s a convenient way for visitors to start an email conversation with you.</li>
@@ -48,6 +48,7 @@ window.UnderpolishedChatSettings = {
         <ul class="list-disc my-4">
             <li><code class="text-red-500">id</code> is what ties this code to your account. It’s how the script knows who to send the email to.</li>
             <li><code class="text-red-500">token</code> is what keeps other people from being bad.</li>
+            <li><code class="text-red-500">button_text</code> lets you override the default "Email Me" or "Email Us" text.</li>
             <li><code class="text-red-500">color</code> is pretty self explanatory. Default is #333333 but you can change it to whatever you find soothing.</li>
             <li><code class="text-red-500">we</code> tells the system whether to use "I/me" pronouns or "We/us" pronouns.</li>
             <li><code class="text-red-500">visitor_email</code> is used in case you already know the email address of the visitor. Eg if you have this chat bubble installed inside of a member-only area.</li>            
@@ -60,10 +61,11 @@ window.UnderpolishedChatSettings = {<template v-if="$store.getters.isLoggedIn">
     token: '{{ $store.getters.memberProfile.token }}', <span class="text-red-500">#required</span>
 </template><template v-else>
     id: REGISTER_TO_GET_THIS, <span class="text-red-500">#required</span>
-    token: REGISTER_TO_GET_THIS, <span class="text-red-500">#required</span>
+    token: 'REGISTER_TO_GET_THIS', <span class="text-red-500">#required</span>
+    button_text: 'Click for Fun Times', <span class="text-blue-500">#optional</span>
 </template>    color: '#333333', <span class="text-blue-500">#optional</span>
-    we: false, <span class="text-blue-500">#optional</span>
-    visior_email: null <span class="text-blue-500">#optional</span>
+    we: true, <span class="text-blue-500">#optional</span>
+    visior_email: 'party@lorenzut.com' <span class="text-blue-500">#optional</span>
 };
 &lt;/script&gt;
 &lt;script src=&quot;https://api.underpolished.com/js/chatwidget.js&quot; async type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</code></pre>
