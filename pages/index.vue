@@ -35,7 +35,7 @@ window.UnderpolishedChatSettings = {
 
     <section class="py-20 px-10 max-w-xl mx-auto">
 
-        <h2 class="text-2xl font-bold mt-16 mb-2">Details</h2>
+        <h2 class="text-2xl font-bold mt-16 mb-2">The Deets</h2>
         <ul>
           <li class="my-4"><span class="text-red-500">&#10004;</span> Free for your first 100 messages (no credit card required). Then just $4/mo for each additional 1,000 messages.</li>
           <li class="my-4"><span class="text-red-500">&#10004;</span> 100% Private. No cookies are used. Which means that you don’t have to add an annoying consent form to your site. And more importantly, it means that Ad Blockers will never block this chat window (unlike others).</li>
