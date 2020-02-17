@@ -44,7 +44,7 @@ window.UnderpolishedChatSettings = {
         </ul>
 
         <h2 class="text-2xl font-bold mt-20 mb-2">Installation and Configuation</h2>
-        <p>There are only 5 settings! And only 3 of them are configurable. Woohoo simplicity!</p>
+        <p>There are only 6 settings! And only 4 of them are configurable. Woohoo simplicity!</p>
         <ul class="list-disc my-4">
             <li><code class="text-red-500">id</code> is what ties this code to your account. It’s how the script knows who to send the email to.</li>
             <li><code class="text-red-500">token</code> is what keeps other people from being bad.</li>
