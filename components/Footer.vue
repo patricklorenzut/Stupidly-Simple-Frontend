@@ -28,7 +28,7 @@
         </script>
         <script src="https://api.underpolished.com/js/chatwidget.js" async type="text/javascript"></script>
 
-        <script async defer src="https://cdn.simpleanalytics.io/hello.js"></script>
-        <noscript><img src="https://api.simpleanalytics.io/hello.gif" alt=""></noscript>
+        <script async defer src="https://lol.underpolished.com/app.js"></script>
+        <noscript><img src="https://lol.underpolished.com/image.gif" alt=""></noscript>
     </footer>
 </template>
