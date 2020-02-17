@@ -16,7 +16,7 @@ export default {
     ]
   },
   env: {
-    appName: 'StupidlySimpleApp',
+    appName: 'Underpolished',
     baseUrl: process.env.BASE_URL,
     baseApiUrl: process.env.API_BASE_URL,
     tokenName: 'satellizer_token',

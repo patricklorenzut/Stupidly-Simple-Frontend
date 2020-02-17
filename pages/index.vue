@@ -13,19 +13,19 @@
 
         <div class="mt-16">         
           <template v-if="!$store.getters.isLoggedIn">
-             <span class="inline-block rounded-full bg-teal-700 hover:bg-teal-800 py-5 px-10 cursor-pointer text-white uppercase font-bold" onclick="ssa_chatwidget.toggle()">Click to See Demo</span>
+             <span class="inline-block rounded-full bg-teal-700 hover:bg-teal-800 py-5 px-10 cursor-pointer text-white uppercase font-bold" onclick="underpolished_chat.toggle()">Click to See Demo</span>
             <p class="text-teal-500 mt-3">Or <nuxt-link to="/register" class="text-red-500 hover:text-red-900">click here</nuxt-link> to create your free account.</p>
           </template>
           <template v-else>
             <p class="mb-3">Here’s your code (see below for configuration options):</p>
             <div class="bg-gray-800 p-4 max-w-md mx-auto font-mono text-white text-sm overflow-x-scroll text-left">
             <pre><code>&lt;script&gt;
-window.SSAChatWidgetSettings = {
+window.UnderpolishedChatSettings = {
     id: {{ $store.getters.memberProfile.id }},
     token: '{{ $store.getters.memberProfile.token }}'
 };
 &lt;/script&gt;
-&lt;script src=&quot;https://api.stupidlysimple.app/js/chatwidget.js&quot; async type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</code></pre>
+&lt;script src=&quot;https://api.underpolished.com/js/chatwidget.js&quot; async type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</code></pre>
         </div>
           </template>
         </div>
@@ -55,7 +55,7 @@ window.SSAChatWidgetSettings = {
         <p class="my-4">The MOST complicated your install could be is this:</p>
         <div class="bg-gray-800 p-4 font-mono text-white text-sm overflow-x-scroll">
             <pre><code>&lt;script&gt;
-window.SSAChatWidgetSettings = {<template v-if="$store.getters.isLoggedIn">
+window.UnderpolishedChatSettings = {<template v-if="$store.getters.isLoggedIn">
     id: {{ $store.getters.memberProfile.id }}, <span class="text-red-500">#required</span>
     token: '{{ $store.getters.memberProfile.token }}', <span class="text-red-500">#required</span>
 </template><template v-else>
@@ -66,16 +66,16 @@ window.SSAChatWidgetSettings = {<template v-if="$store.getters.isLoggedIn">
     visior_email: null <span class="text-blue-500">#optional</span>
 };
 &lt;/script&gt;
-&lt;script src=&quot;https://api.stupidlysimple.app/js/chatwidget.js&quot; async type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</code></pre>
+&lt;script src=&quot;https://api.underpolished.com/js/chatwidget.js&quot; async type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</code></pre>
         </div>
 
 
         <h2 class="text-2xl font-bold mt-20 mb-2">Functions</h2>
         <p>Want to interact with this chat bubble from your own application? You can!</p>
         <ul class="list-desc">
-            <li class="mt-3"><code class="bg-gray-800 text-red-500 px-2 py-1 inline-block">ssa_chatwidget.open()</code> opens the chat box.</li>
-            <li class="mt-3"><code class="bg-gray-800 text-red-500 px-2 py-1 inline-block">ssa_chatwidget.close()</code> closes it.</li>
-            <li class="mt-3"><code class="bg-gray-800 text-red-500 px-2 py-1 inline-block">ssa_chatwidget.toggle()</code> toggles it.</li>
+            <li class="mt-3"><code class="bg-gray-800 text-red-500 px-2 py-1 inline-block">underpolished_chat.open()</code> opens the chat box.</li>
+            <li class="mt-3"><code class="bg-gray-800 text-red-500 px-2 py-1 inline-block">underpolished_chat.close()</code> closes it.</li>
+            <li class="mt-3"><code class="bg-gray-800 text-red-500 px-2 py-1 inline-block">underpolished_chat.toggle()</code> toggles it.</li>
         </ul>
 
         <h2 class="text-2xl font-bold mt-20 mb-2">How is this better than Intercom?</h2>
@@ -83,9 +83,9 @@ window.SSAChatWidgetSettings = {<template v-if="$store.getters.isLoggedIn">
 
         <p class="mb-4">But since you asked…</p>
 
-        <p class="mb-4">Things tend to be relative. This is one of those things. It’s not so much that <i>Stupidly Simple Chat</i> is “better” than <i>Intercom</i>. It’s not. You could argue that it’s far “worse”, in fact. Intercom is dope and full of some really cool features.</p>
+        <p class="mb-4">Things tend to be relative. This is one of those things. It’s not so much that <i>Underpolished Chat</i> is “better” than <i>Intercom</i>. It’s not. You could argue that it’s far “worse”, in fact. Intercom is dope and full of some really cool features.</p>
 
-        <p class="mb-4">But <i>Stupidly Simple Chat</i> very well might be better than <i>Intercom</i> <b>for you</b>. </p>
+        <p class="mb-4">But <i>Underpolished Chat</i> very well might be better than <i>Intercom</i> <b>for you</b>. </p>
 
         <p class="mb-4">Which is all that matters, right?</p>
 
@@ -111,7 +111,7 @@ window.SSAChatWidgetSettings = {<template v-if="$store.getters.isLoggedIn">
 
         <p class="mb-4">So I built this. I hope it’s as marginally useful for you as it is for me!</p>
 
-        <p class="mt-16">Questions or feedback? <span class="text-red-500 hover:text-red-900 cursor-pointer" onclick="ssa_chatwidget.open()">Let me know!</span></p>
+        <p class="mt-16">Questions or feedback? <span class="text-red-500 hover:text-red-900 cursor-pointer" onclick="underpolished_chat.open()">Let me know!</span></p>
         
     </section>    
 

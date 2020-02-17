@@ -1,7 +1,7 @@
 <template>
     <div class="w-full min-h-screen bg-teal-600">
         <div class="w-full max-w-xs mx-auto">
-            <h2 class="font-bold py-5 text-center text-white">Create a Stupidly Simple Account</h2>
+            <h2 class="font-bold py-5 text-center text-white">Create an Underpolished Account</h2>
             <Notification :message="error" v-if="error"/>
             <form class="auth-form" method="post" @submit.prevent="register">
                 <div class="mb-4">

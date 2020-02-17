@@ -1,7 +1,7 @@
 <template>
     <div class="w-full min-h-screen bg-teal-600">
         <div class="w-full max-w-xs mx-auto">
-            <h2 class="font-bold py-5 text-center text-white">A Stupidly Simple Login Page</h2>
+            <h2 class="font-bold py-5 text-center text-white">An Underpolished Login Page</h2>
             <form class="auth-form">
                 <div class="mb-4">
                     <label for="username">
