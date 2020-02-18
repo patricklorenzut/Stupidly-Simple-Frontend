@@ -37,8 +37,8 @@ window.UnderpolishedChatSettings = {
 
         <h2 class="text-2xl font-bold mt-16 mb-2">The Deets</h2>
         <ul>
-          <li class="my-4"><span class="text-red-500">&#10004;</span> Free for your first 100 emails (no credit card required). Then just $7 for each additional 1,000 emails. There is NO monthly billing. And there’s no expiration. So if you get 1,000 emails every 3 years then you'll pay $7 every 3 years. Because paying $X for your first Y usage every month is some bullshit that exploits the hell out of people that aren’t even close to Y usage. This guy (read: me) will not charge you just to play the game.</li>
-          <li class="my-4"><span class="text-red-500">&#10004;</span> 100% Private. No cookies are used. Which means that you don’t have to add an annoying consent form to your site. And more importantly, it means that Ad Blockers will never block this chat window (unlike others).</li>
+          <li class="my-4"><span class="text-red-500">&#10004;</span> Free for your first 100 emails (no credit card required). Then just $4 per month after that.</li>
+          <li class="my-4"><span class="text-red-500">&#10004;</span> 100% Private. No cookies are used. Which means that you don’t have to add an annoying consent form to your site. More importantly it means that Ad Blockers will never block this chat window (unlike others). And MOST importantly it means that you're doing your part to make the internet a better place.</li>
           <li class="my-4"><span class="text-red-500">&#10004;</span> Ultra-lightweight. Built with vanilla JavaScript. No jQuery bloat here :)</li>
           <li class="my-4"><span class="text-red-500">&#10004;</span> Stupidly simple on purpose. This is <strong>not a live chat tool</strong>. Rather it’s a convenient way for visitors to start an email conversation with you.</li>
         </ul>
